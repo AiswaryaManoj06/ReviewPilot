@@ -1,4 +1,4 @@
-# 🔍 ReviewPilot — AI-Powered Code Review
+ ReviewPilot — AI-Powered Code Review
 
 ReviewPilot is an AI-powered web application that automates the initial code review process by analyzing GitHub pull requests or pasted source code. It uses Google Gemini AI to identify potential bugs, security vulnerabilities, performance bottlenecks, and code quality issues.
 
@@ -6,57 +6,57 @@ ReviewPilot is an AI-powered web application that automates the initial code rev
 ![Flask](https://img.shields.io/badge/Flask-3.x-green?style=flat-square&logo=flask)
 ![Gemini](https://img.shields.io/badge/Gemini_AI-1.5-purple?style=flat-square&logo=google)
 
-## ✨ Features
+Features
 
-- **🐛 Bug Detection** — Identifies potential bugs, logic errors, and edge cases
-- **🔒 Security Analysis** — Scans for SQL injection, XSS, hardcoded secrets, and more
-- **⚡ Performance Insights** — Detects N+1 queries, memory leaks, and inefficiencies
-- **📖 Code Readability** — Evaluates naming, complexity, and maintainability
-- **📊 Risk Assessment** — Provides overall risk score with severity levels
-- **📋 Structured Reports** — Generates actionable reports with fix suggestions
+-  Bug Detection** — Identifies potential bugs, logic errors, and edge cases
+-  Security Analysis** — Scans for SQL injection, XSS, hardcoded secrets, and more
+-  Performance Insights** — Detects N+1 queries, memory leaks, and inefficiencies
+-  Code Readability** — Evaluates naming, complexity, and maintainability
+-  Risk Assessment** — Provides overall risk score with severity levels
+-  Structured Reports** — Generates actionable reports with fix suggestions
 
-## 🚀 Getting Started
 
-### Prerequisites
+
+ Prerequisites
 
 - Python 3.9+
 - A Google Gemini API key ([get one free](https://aistudio.google.com/apikey))
 
-### Installation
+ Installation
 
-1. **Clone the repository**
+1.  Clone the repository
    ```bash
    cd ReviewPilot
    ```
 
-2. **Create a virtual environment**
+2. Create a virtual environment
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies**
+3.  Install dependencies
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Configure environment**
+4.  Configure environment
    ```bash
    # Edit .env and add your Gemini API key
    nano .env
    ```
 
-5. **Run the application**
+5.   Run the application
    ```bash
    python app.py
    ```
 
-6. **Open in browser**
+6.   Open in browser
    ```
    http://localhost:5000
    ```
 
-## 📁 Project Structure
+  📁 Project Structure
 
 ```
 ReviewPilot/
@@ -76,7 +76,7 @@ ReviewPilot/
     └── review.html         # Review results page
 ```
 
-## 🛠️ Tech Stack
+  Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -86,21 +86,21 @@ ReviewPilot/
 | GitHub | REST API v3 |
 | Styling | Vanilla CSS (Dark Glassmorphism) |
 
-## 📝 Usage
+ Usage
 
-### Review a GitHub Pull Request
+   Review a GitHub Pull Request
 1. Navigate to the app
 2. Select the **GitHub PR** tab
 3. Paste the PR URL (e.g., `https://github.com/owner/repo/pull/123`)
 4. Optionally add a GitHub token for private repos
 5. Click **Analyze Pull Request**
 
-### Review a Code Snippet
+   Review a Code Snippet
 1. Select the **Code Snippet** tab
 2. Choose the programming language (or auto-detect)
 3. Paste your code
 4. Click **Analyze Code**
 
-## 📄 License
+    License
 
 This project is open source and available under the [MIT License](LICENSE).
