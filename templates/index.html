@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}ReviewPilot — AI-Powered Code Review{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            AI-Powered Code Review
+        </div>
+        <h1>
+            Catch Bugs Before<br>
+            They Catch You<span class="gradient-text">.</span>
+        </h1>
+        <p>
+            ReviewPilot uses advanced AI to analyze your pull requests and code snippets,
+            identifying bugs, security vulnerabilities, and performance issues — instantly.
+        </p>
+        <div class="hero-cta">
+            <a href="#start-review" class="btn btn-primary btn-lg" id="cta-start-review">
+                🚀 Start Reviewing
+            </a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg" id="cta-how-it-works">
+                How It Works
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-label">Capabilities</div>
+        <h2 class="section-title">Everything You Need for Smarter Reviews</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon bug">🐛</div>
+                <h3>Bug Detection</h3>
+                <p>Automatically identifies potential bugs, logic errors, null pointer issues, and edge cases that could cause runtime failures.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon security">🔒</div>
+                <h3>Security Analysis</h3>
+                <p>Scans for security vulnerabilities including SQL injection, XSS, hardcoded secrets, and insecure configurations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon performance">⚡</div>
+                <h3>Performance Insights</h3>
+                <p>Detects performance bottlenecks like N+1 queries, unnecessary computations, memory leaks, and inefficient algorithms.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon readability">📖</div>
+                <h3>Code Readability</h3>
+                <p>Evaluates code quality, naming conventions, complexity, and maintainability to ensure clean, readable code.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon risk">📊</div>
+                <h3>Risk Assessment</h3>
+                <p>Provides an overall risk score with severity levels for each issue, helping you prioritize what matters most.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon reports">📋</div>
+                <h3>Structured Reports</h3>
+                <p>Generates detailed, actionable reports with code snippets, fix suggestions, and explanations for every finding.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-label">Process</div>
+        <h2 class="section-title">Three Steps to Better Code</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Input Your Code</h3>
+                <p>Paste a GitHub PR URL or drop in a code snippet you want reviewed.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>AI Analysis</h3>
+                <p>Our AI examines patterns, logic, security, and performance in seconds.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Get Your Report</h3>
+                <p>Receive a structured review with severity ratings, fixes, and actionable insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Input Section -->
+    <section class="input-section" id="start-review">
+        <div class="section-label">Get Started</div>
+        <h2 class="section-title">Start Your Code Review</h2>
+        <div class="input-card">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="pr" id="tab-pr">
+                    🔗 GitHub PR
+                </button>
+                <button class="tab-btn" data-tab="snippet" id="tab-snippet">
+                    📝 Code Snippet
+                </button>
+            </div>
+
+            <!-- Tab: GitHub PR -->
+            <div class="tab-panel active" id="panel-pr">
+                <form id="pr-form">
+                    <div class="form-group">
+                        <label class="form-label" for="pr-url">Pull Request URL</label>
+                        <input
+                            type="url"
+                            class="form-input"
+                            id="pr-url"
+                            name="url"
+                            placeholder="https://github.com/owner/repo/pull/123"
+                            required
+                        >
+                        <span class="form-hint">Enter the full URL of a public GitHub pull request</span>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="gh-token">GitHub Token <span style="color: var(--text-tertiary);">(optional)</span></label>
+                        <input
+                            type="password"
+                            class="form-input"
+                            id="gh-token"
+                            name="token"
+                            placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+                        >
+                        <span class="form-hint">Required for private repositories. Your token is never stored.</span>
+                    </div>
+                    <div class="submit-area">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-pr">
+                            🔍 Analyze Pull Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab: Code Snippet -->
+            <div class="tab-panel" id="panel-snippet">
+                <form id="snippet-form">
+                    <div class="form-group">
+                        <label class="form-label" for="language">Language <span style="color: var(--text-tertiary);">(optional)</span></label>
+                        <select class="form-input form-select" id="language" name="language">
+                            <option value="">Auto-detect</option>
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="java">Java</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="csharp">C#</option>
+                            <option value="go">Go</option>
+                            <option value="rust">Rust</option>
+                            <option value="ruby">Ruby</option>
+                            <option value="php">PHP</option>
+                            <option value="swift">Swift</option>
+                            <option value="kotlin">Kotlin</option>
+                            <option value="sql">SQL</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="shell">Shell/Bash</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="code-input">Code Snippet</label>
+                        <textarea
+                            class="form-input code-textarea"
+                            id="code-input"
+                            name="code"
+                            placeholder="Paste your code here..."
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="submit-area">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-snippet">
+                            🔍 Analyze Code
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
